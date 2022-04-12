@@ -23,6 +23,7 @@ header h3 {
   height: auto;
   border: 2px solid #000;
 }
+
 .list_head {
   align-items: center;
   align-self: center;
@@ -44,6 +45,7 @@ ul {
   width: 100%;
   background-color: #e0dddd;
 }
+
 .add_scores {
   display: flex;
   flex-direction: column;
