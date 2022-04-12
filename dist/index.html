@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboard project</title>
 <script defer src="main.js"></script></head>
+
 <body>
-    <h1>Hello webpack!</h1>
+    <h3>Leaderboard</h3>
+    <div class="container">
+        <div class="display_scores">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+        <div class="add_scores">
+            <h3>Add your score</h3>
+            <form action="#">
+                <input type="text" name="name" id="name" placeholder="Your name" required />
+                <input type="number" name="score" id="score" placeholder="Your score" required />
+
+                <button name="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -1,13 +1,31 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
+const item = document.querySelector('.scores');
 
-  // Lodash, imported
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const dummyList = [
+  {
+    user: 'Kip',
+    score: 200,
+  }, {
+    user: 'Raheem',
+    score: 200,
+  }, {
+    user: 'Musk',
+    score: 200,
+  }, {
+    user: 'Koech',
+    score: 200,
+  },
+];
 
-  return element;
+dummyList.forEach((e) => {
+  item.innerHTML = `<li>${e.user}: ${e.score} </li>`;
+});
+
+for (let i = 0; i < item.length; i = +1) {
+  if (i % 2 === 0) {
+    item[i].style.backgroundColor = '#fff';
+  } else {
+    item[i].style.backgroundColor = '#e0dddd';
+  }
 }
-
-document.body.appendChild(component());
