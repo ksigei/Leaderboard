@@ -1,4 +1,5 @@
 import './style.css';
+
 import { displayData, url, scoreUl } from './modules/display_data.js';
 
 const nameValue = document.querySelector('#name');

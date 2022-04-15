@@ -1,57 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2b8d5c #74753b;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #74753b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2b8d5c;
+  border-radius: 20px;
+  border: 3px solid #74753b;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  background-color: #faf9f8;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  background-color: #1d3f34;
 }
 
 header h3 {
-  margin: 5vh 0 0 10vw;
-  font-size: 30px;
+  margin: 2vh 0 0 10vw;
+  font-size: 50px;
+  font-family: 'Shadows Into Light Two', cursive;
+  color: #74753b;
 }
 
 .main {
   align-items: center;
   align-self: center;
-  margin: 5vh 5% 0 5%;
+  margin: 5vh 5% 0 10%;
   display: flex;
   gap: 10%;
+  color: #74753b;
+  font-weight: bold;
 }
 
 .score_list {
-  width: 40vw;
-  height: auto;
-  border: 2px solid #000;
+  width: 35vw;
+  height: 30vw;
+  border: 5px solid #74753b;
+  border-radius: 10pt;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .list_head {
   align-items: center;
   align-self: center;
-  margin: 1vh 5% 0 5%;
+  margin: 1vh 0 0 0;
   display: flex;
-  gap: 3vw;
+  gap: 12.3vw;
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.scores {
+  margin: 10px;
 }
 
 tr {
-  padding: 4px;
+  padding: 5px;
   display: flex;
   gap: 10%;
+  border: 3px solid #1d3f34;
+  border-radius: 10pt;
 }
 
 tr:nth-child(odd) {
   background-color: #cecbcb;
+  color: #d36f1d;
+}
+
+tr:nth-child(even) {
+  background-color: #8aa9be;
+  color: #791379;
 }
 
 td {
-  width: 15%;
+  margin-left: 4vw;
+  width: 40%;
   display: flex;
   gap: 5px;
   font-size: 18px;
 }
 
 .add_scores {
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
   display: flex;
   flex-direction: column;
+  margin: 0 0 0 40%;
   width: 40vw;
   height: 40vh;
 }
@@ -63,13 +112,118 @@ form {
 }
 
 input {
-  border: 2px solid #000;
+  background-color: #1d3f34;
+  color: #e5eaf0;
+  border: 2px solid #74753b;
+  border-radius: 4pt;
   height: 5vh;
+  width: 50%;
 }
 
 button {
   width: 10vw;
   height: 6vh;
-  border: 2px solid #000;
+  font-weight: bold;
+  color: #e5eaf0;
+  border: 2px solid #cf7c10;
+  background-color: rgb(3, 129, 87);
+  font-family: 'Shadows Into Light Two', cursive;
+  border-radius: 4pt;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    align-items: center;
+    align-self: center;
+    margin: 1vh 0 0 5%;
+    display: flex;
+    gap: 50%;
+    color: #74753b;
+    font-weight: bold;
+  }
+
+  .score_list {
+    width: 55vw;
+    height: 100vw;
+    border: 5px solid #74753b;
+    border-radius: 10pt;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .list_head {
+    align-items: center;
+    align-self: center;
+    margin: 1vh 0 0 0;
+    display: flex;
+    gap: 12.3vw;
+    font-family: 'Shadows Into Light Two', cursive;
+  }
+
+  .scores {
+    margin: 10px;
+  }
+
+  tr {
+    padding: 5px;
+    display: flex;
+    gap: 10%;
+    border: 3px solid #1d3f34;
+    border-radius: 10pt;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #cecbcb;
+    color: #d36f1d;
+  }
+
+  tr:nth-child(even) {
+    background-color: #8aa9be;
+    color: #791379;
+  }
+
+  td {
+    margin-left: 4vw;
+    width: 25%;
+    display: flex;
+    font-size: 13px;
+  }
+
+  .add_scores {
+    font-family: 'Shadows Into Light Two', cursive;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 60%;
+    width: 60vw;
+    height: 40vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  input {
+    background-color: #1d3f34;
+    color: #e5eaf0;
+    border: 2px solid #74753b;
+    border-radius: 4pt;
+    height: 5vh;
+    width: 50%;
+  }
+
+  button {
+    width: 15vw;
+    height: 6vh;
+    font-weight: bold;
+    color: #e5eaf0;
+    border: 2px solid #cf7c10;
+    background-color: rgb(3, 129, 87);
+    font-family: 'Shadows Into Light Two', cursive;
+    border-radius: 4pt;
+    cursor: pointer;
+  }
 }
