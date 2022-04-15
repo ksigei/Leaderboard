@@ -116,17 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_list_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/list.js */ \"./src/modules/list.js\");\n\n\n\n\n\n_modules_list_js__WEBPACK_IMPORTED_MODULE_1__.dummyList.forEach((e) => {\n  _modules_list_js__WEBPACK_IMPORTED_MODULE_1__.item.innerHTML = `<li>${e.user}: ${e.score} </li>`;\n});\n\n\n\n\n//# sourceURL=webpack://JS_ToDo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/display_data.js */ \"./src/modules/display_data.js\");\n\n\n\n\n\n\nconst nameValue = document.querySelector('.name-holder');\nconst scoreValue = document.querySelector('.score-holder');\nconst addBtn = document.querySelector('.submit-btn');\nconst ourRefreshBtn = document.querySelector('.refresh-btn');\n\naddBtn.addEventListener('click', () => {\n    fetch(_modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__.url, {\n        method: 'POST',\n        body: JSON.stringify({\n            user: nameValue.value,\n            score: scoreValue.value\n        }),\n        headers: {\n            'Content-type': 'application/json; charset=UTF-8',\n        }\n    }).then((response) => response.json())\n        .then((json) => console.log(json));\n});\n\n\n\n ourRefreshBtn.addEventListener('click',() => {\n    if(_modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__.mainDynamicBox.innerHTML != '') {\n        _modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__.mainDynamicBox.innerHTML = '';\n        (0,_modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n    } else {\n        (0,_modules_display_data_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n    }\n});\n\n\n//# sourceURL=webpack://JS_ToDo/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/modules/list.js":
-/*!*****************************!*\
-  !*** ./src/modules/list.js ***!
-  \*****************************/
+/***/ "./src/modules/display_data.js":
+/*!*************************************!*\
+  !*** ./src/modules/display_data.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dummyList\": () => (/* binding */ dummyList),\n/* harmony export */   \"item\": () => (/* binding */ item)\n/* harmony export */ });\nconst item = document.querySelector('.scores');\n\nconst dummyList = [\n  {\n    user: 'Kip',\n    score: 200,\n  }, {\n    user: 'Raheem',\n    score: 200,\n  }, {\n    user: 'Musk',\n    score: 200,\n  }, {\n    user: 'Koech',\n    score: 200,\n  },\n];\n\n\n\n//# sourceURL=webpack://JS_ToDo/./src/modules/list.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayData),\n/* harmony export */   \"mainDynamicBox\": () => (/* binding */ mainDynamicBox),\n/* harmony export */   \"url\": () => (/* binding */ url)\n/* harmony export */ });\nconst url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zRPcLNnykoeas7KKzkpU/scores';\n\nconst mainDynamicBox = document.querySelector('.dynamic-box');\nconst gameID = 'zRPcLNnykoeas7KKzkpU'\n\n\nasync function displayData() {\n    const fetchData = await fetch(url).then((response) => response.json());\n    console.log(\"line61\", fetchData.result)\n    fetchData.result.forEach(item => {\n        console.log(\"inside displaydata\", item);\n        const dynamicDiv = document.createElement('div');\n        dynamicDiv.className = 'dynamic-div';\n        dynamicDiv.innerHTML = `${item.user} : ${item.score}`;\n        mainDynamicBox.appendChild(dynamicDiv);\n        mainDynamicBox.style.display = 'block';\n\n    })\n};\n\n//# sourceURL=webpack://JS_ToDo/./src/modules/display_data.js?");
 
 /***/ })
 
