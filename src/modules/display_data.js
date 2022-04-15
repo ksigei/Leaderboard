@@ -2,7 +2,7 @@ export const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/a
 
 export const scoreUl = document.querySelector('.scores');
 
-export default async function displayData() {
+const displayData = async () => {
   const fetchData = await fetch(url).then((response) => response.json());
   fetchData.result.sort((a, b) => b.score - a.score);
   fetchData.result.forEach((item) => {
@@ -12,4 +12,6 @@ export default async function displayData() {
     scoreUl.appendChild(scoreContainer);
     scoreUl.style.display = 'block';
   });
-}
+};
+
+export { displayData };
