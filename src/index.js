@@ -1,5 +1,5 @@
 import './style.css';
-import {displayData, url, scoreUl } from './modules/display_data.js';
+import { displayData, url, scoreUl } from './modules/display_data.js';
 
 const nameValue = document.querySelector('#name');
 const scoreValue = document.querySelector('#score');
@@ -27,3 +27,6 @@ ourRefreshBtn.addEventListener('click', () => {
     displayData();
   }
 });
+
+nameValue.value = '';
+scoreValue.value = '';
