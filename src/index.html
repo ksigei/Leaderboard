@@ -18,19 +18,19 @@
         <button type="button" name="button" id="refresh_btn">Refresh</button>
       </div>
       <div class="score_list">
-        <ul class="scores">
+        <table class="scores">
 
-        </ul>
+        </table>
       </div>
     </div>
     <div class="add_scores">
       <h3>Add your score</h3>
-      <div>
+      <form method="post">
         <input type="text" name="name" id="name" placeholder="Your name" required />
         <input type="number" name="score" id="score" placeholder="Your score" required />
 
-        <button name="submit" type="submit" id="submit_score">Submit</button>
-      </div>
+        <button name="submit" type="button" value="submit" id="submit_score">Submit</button>
+      </form>
     </div>
   </section>
 </body>

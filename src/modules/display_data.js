@@ -1,19 +1,15 @@
 export const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/SiR96bAia8ODy3OSMi9e/scores';
 
 export const scoreUl = document.querySelector('.scores');
-// const gameID = 'zRPcLNnykoeas7KKzkpU'
-
 
 export default async function displayData() {
-    const fetchData = await fetch(url).then((response) => response.json());
-    console.log("line61", fetchData.result)
-    fetchData.result.forEach(item => {
-        console.log("inside displaydata", item);
-        const scoreContainer = document.createElement('li');
-        scoreContainer.className = 'li_item';
-        scoreContainer.innerHTML = `${item.user} : ${item.score}`;
-        scoreUl.appendChild(scoreContainer);
-        scoreUl.style.display = 'block';
-
-    })
-};
+  const fetchData = await fetch(url).then((response) => response.json());
+  fetchData.result.sort((a, b) => b.score - a.score);
+  fetchData.result.forEach((item) => {
+    const scoreContainer = document.createElement('tr');
+    scoreContainer.className = 'li_item';
+    scoreContainer.innerHTML = `<td>${item.user} </td>: <td>${item.score}</td>`;
+    scoreUl.appendChild(scoreContainer);
+    scoreUl.style.display = 'block';
+  });
+}
