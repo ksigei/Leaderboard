@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leaderboard project</title>
-  </head>
 
-  <body>
-    <header>
-        <h3>Leaderboard</h3>
-    </header>
-    <section class="main">
-      <div class="display_scores">
-        <div class="list_head">
-          <h3>Recent scores</h3>
-          <button type="button" name="button">Refresh</button>
-        </div>
-        <div class="score_list">
-            <ul class="scores">
-                
-            </ul>
-        </div>
-      </div>
-      <div class="add_scores">
-        <h3>Add your score</h3>
-        <form action="#">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            required
-          />
-          <input
-            type="number"
-            name="score"
-            id="score"
-            placeholder="Your score"
-            required
-          />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard project</title>
+</head>
 
-          <button name="submit" type="submit">Submit</button>
-        </form>
+<body>
+  <header>
+    <h3>Leaderboard</h3>
+  </header>
+  <section class="main">
+    <div class="display_scores">
+      <div class="list_head">
+        <h3>Recent scores</h3>
+        <button type="button" name="button" id="refresh_btn">Refresh</button>
       </div>
-    </section>
-  </body>
+      <div class="score_list">
+        <table class="scores">
+
+        </table>
+      </div>
+    </div>
+    <div class="add_scores">
+      <h3>Add your score</h3>
+      <form method="post">
+        <input type="text" name="name" id="name" placeholder="Your name" required />
+        <input type="number" name="score" id="score" placeholder="Your score" required />
+
+        <button name="submit" type="button" value="submit" id="submit_score">Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+
 </html>
