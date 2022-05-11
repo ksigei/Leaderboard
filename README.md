@@ -15,9 +15,9 @@
 Javascrpit
 
 
-## Live Demo (if available)
+## Live Demo 
 
-[Live Demo Link](#)
+[Live Demo Link](https://ksigei.github.io/Leaderboard/)
 
 ## Getting Started
 
